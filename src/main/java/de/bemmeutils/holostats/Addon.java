@@ -1,6 +1,7 @@
 package de.bemmeutils.holostats;
 
 import de.bemmeutils.holostats.listener.MessageSendListener;
+import de.bemmeutils.holostats.listener.PrivateMessageListener;
 import de.bemmeutils.holostats.listener.PurchaseListener;
 import de.bemmeutils.holostats.listener.SellListener;
 import de.bemmeutils.holostats.messages.MessageTarget;
@@ -63,6 +64,7 @@ public class Addon extends LabyModAddon {
             exception.printStackTrace();
         }
         this.getApi().getEventManager().register(new MessageSendListener());
+        this.getApi().getEventManager().register(new PrivateMessageListener());
         runCommandWorker();
     }
 
